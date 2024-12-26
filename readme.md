@@ -86,7 +86,7 @@ db.codekata.insertMany([
 }
 }
 
-]
+])
 ```
 ## Attendance Collection
 ```json
