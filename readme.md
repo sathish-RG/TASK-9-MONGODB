@@ -1,8 +1,9 @@
 # MongoDB Task
 ## database for Zen class programme
 ## users:
+db.users.insertMany(
 ```json
-`db.users.insertMany`([
+[
   {
     "_id": 1,
     "name": "Sathish",
