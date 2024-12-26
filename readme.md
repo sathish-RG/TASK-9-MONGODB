@@ -2,7 +2,7 @@
 ## database for Zen class programme
 ## users:
 ```json
-[
+db.users.insertMany([
   {
     "_id": 1,
     "name": "Sathish",
@@ -66,7 +66,7 @@
 ```
 ## Codekata Collection
 ```json
-[
+db.codekata.insertMany([
 {
   "_id": 1,
   "user_id": 1,
@@ -89,7 +89,7 @@
 ```
 ## Attendance Collection
 ```json
-[
+db.attendance.insertMany([
 {
   "_id": 1,
   "user_id": 1,
@@ -113,7 +113,7 @@
 ```
 ## Topics Collection
 ```json
-[
+db.topics.insertMany([
     {
   "_id": 1,
   "title": "React JS",
@@ -132,7 +132,7 @@
 ```
 ## Tasks Collection
 ```json
-[
+db.tasks.insertMany([
   {
   "_id": 1,
   "title": "Search Movies",
@@ -152,7 +152,7 @@
 ```
 ## Company Drives Collection
 ```json
-[
+db.company.insertMany([
 {
   "_id": 1,
   "company_name": "Zoho",
@@ -170,7 +170,7 @@
 ```
 ## Mentors Collection
 ```json
-[
+db.mentors.insertMany([
 {
   "_id": 1,
   "name": "Sanjai",
