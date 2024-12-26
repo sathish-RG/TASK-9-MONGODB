@@ -1,7 +1,7 @@
 # MongoDB Task
 ## database for Zen class programme
 ## users:
-db.users.insertMany(
+
 ```json
 [
   {
@@ -65,9 +65,10 @@ db.users.insertMany(
   }
 ]
 ```
+
 ## Codekata Collection
 ```json
-db.codekata.insertMany([
+[
 {
   "_id": 1,
   "user_id": 1,
@@ -85,12 +86,11 @@ db.codekata.insertMany([
   "problems_solved": 600
 }
 }
-
-])
+]
 ```
 ## Attendance Collection
 ```json
-db.attendance.insertMany([
+[
 {
   "_id": 1,
   "user_id": 1,
@@ -114,7 +114,7 @@ db.attendance.insertMany([
 ```
 ## Topics Collection
 ```json
-db.topics.insertMany([
+[
     {
   "_id": 1,
   "title": "React JS",
@@ -133,7 +133,7 @@ db.topics.insertMany([
 ```
 ## Tasks Collection
 ```json
-db.tasks.insertMany([
+[
   {
   "_id": 1,
   "title": "Search Movies",
@@ -153,7 +153,7 @@ db.tasks.insertMany([
 ```
 ## Company Drives Collection
 ```json
-db.company.insertMany([
+[
 {
   "_id": 1,
   "company_name": "Zoho",
@@ -171,7 +171,7 @@ db.company.insertMany([
 ```
 ## Mentors Collection
 ```json
-db.mentors.insertMany([
+[
 {
   "_id": 1,
   "name": "Sanjai",
