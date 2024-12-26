@@ -2,7 +2,7 @@
 ## database for Zen class programme
 ## users:
 ```json
-db.users.insertMany([
+`db.users.insertMany`([
   {
     "_id": 1,
     "name": "Sathish",
