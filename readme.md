@@ -188,7 +188,7 @@
 # QUERIES
 
 ## 1) Find all the topics and tasks which are thought in the month of October.
-`
+```sql
 db.topics.aggregate([
   { 
     $match: { 
@@ -210,4 +210,60 @@ db.tasks.aggregate([
     } 
   }
 ]);
-`
+```
+## 2) Find all the company drives which appeared between 15 Oct 2020 and 31 Oct 2020.
+```sql 
+db.company_drives.find({
+  date: {
+    $gte: ISODate("2020-10-15"),
+    $lte: ISODate("2020-10-31")
+  }
+});
+```
+## 3) Find all the company drives and students who appeared for the placement.
+```sql
+db.company_drives.aggregate([
+  {
+    $lookup: {
+      from: "users",
+      localField: "students_appeared",
+      foreignField: "_id",
+      as: "students"
+    }
+  }
+]);
+```
+## 4) Find the number of problems solved by the user in codekata.
+```sql
+db.users.aggregate([
+  {
+    $project: {
+      name: 1,
+      codekata_problems_solved: 1
+    }
+  }
+]);
+```
+## 5) Find all the mentors who have mentees count more than 15.
+```sql
+db.mentors.find({
+  $expr: { $gt: [{ $size: "$mentees" }, 15] }
+});
+```
+## 6) Find the number of users who are absent and tasks not submitted between 15 Oct 2020 and 31 Oct 2020.
+```sql
+db.users.aggregate([
+  {
+    $match: {
+      $and: [
+        { "attendance.date": { $gte: ISODate("2020-10-15"), $lte: ISODate("2020-10-31") } },
+        { "attendance.status": "Absent" },
+        { "tasks_submitted.submitted_date": { $not: { $gte: ISODate("2020-10-15"), $lte: ISODate("2020-10-31") } } }
+      ]
+    }
+  },
+  {
+    $count: "absent_and_task_not_submitted"
+  }
+]);
+```
